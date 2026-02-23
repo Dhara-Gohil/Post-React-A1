@@ -95,7 +95,14 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-950 text-white p-8">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Dashboard</h1>
+        <div>
+          <h1 className="text-3xl font-bold">Dashboard</h1>
+          <p className="text-sm text-gray-400 mt-1">
+            Logged in as: {authState.email}
+          </p>
+          <p className="text-xs text-indigo-400">Role: {authState.role}</p>
+        </div>
+
         <Button variant="contained" color="error" onClick={handleSignOut}>
           Logout
         </Button>

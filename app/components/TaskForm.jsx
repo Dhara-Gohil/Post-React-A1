@@ -48,7 +48,9 @@ export default function TaskForm({ onCreated }) {
         className="w-full p-2 bg-gray-800 rounded"
       >
         <option value="">Assign to (optional)</option>
-        {users.map((u) => (
+        {users
+        .filter(u => u.role !== "admin" && u.uid !== authState.uid)
+        .map((u) => (
           <option key={u.uid} value={u.uid}>
             {u.email}
           </option>
